@@ -2,6 +2,8 @@ import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { Ionicons, MaterialIcons } from '@expo/vector-icons'; 
 
+import Icon from './Icon';
+
 export default function AppBar() {
   return (
     <>
@@ -11,8 +13,8 @@ export default function AppBar() {
           <Text style={styles.appbarContentText}>戻る</Text>
         </View>
         <View style={styles.appbarContent}>
-          <Ionicons name="ios-search" size={32} color="white" style={styles.appbarContentImg}/>
-          <MaterialIcons name="settings" size={32} color="white" />
+          <Icon name="search" size={28} color={"#ffffff"} style={styles.appbarContentImg}/>
+          <Icon name="setting" size={28} color={"#ffffff"}/>
         </View>
       </View>
       <View style={styles.appbarLine} />
