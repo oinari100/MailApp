@@ -1,13 +1,19 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 
 import GenreListScreen from './src/screens/GenreListScreen';
 
+const Stack = createStackNavigator();
+
 export default function App() {
   return (
-    <View style={styles.container}>
-      <GenreListScreen />
-    </View>
+    <NavigationContainer style={styles.container}>
+      <Stack.Navigator>
+        <Stack.Screen name="GenreList" component={GenreListScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 

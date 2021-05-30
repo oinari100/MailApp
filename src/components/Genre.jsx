@@ -1,17 +1,17 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, Alert } from 'react-native';
 import CustomIcon from './CustomIcon';
 
 export default function Genre(props) {
   const { name, text, color } = props;
   return (
-    <View style={styles.genre}>
+    <TouchableOpacity style={styles.genre} onPress={() => {Alert.alert("クリック")}}>
       <View style={styles.genreContent}>
         <CustomIcon name={name} size={46} color={color} />
         <Text style={styles.genreText}>{text}</Text>
       </View>
       <CustomIcon name="arrow" size={24} color={color} />
-    </View>
+    </TouchableOpacity>
   );
 }
 
