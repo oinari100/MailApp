@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { Ionicons, MaterialIcons } from '@expo/vector-icons'; 
 
-import Icon from './Icon';
+import CustomIcon from './CustomIcon';
 
 export default function AppBar() {
   return (
@@ -13,8 +13,8 @@ export default function AppBar() {
           <Text style={styles.appbarContentText}>戻る</Text>
         </View>
         <View style={styles.appbarContent}>
-          <Icon name="search" size={28} color={"#ffffff"} style={styles.appbarContentImg}/>
-          <Icon name="setting" size={28} color={"#ffffff"}/>
+          <CustomIcon name="search" size={28} color={"#ffffff"} style={styles.appbarContentImg}/>
+          <CustomIcon name="setting" size={28} color={"#ffffff"}/>
         </View>
       </View>
       <View style={styles.appbarLine} />
@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
     paddingBottom: 8,
   },
   appbarContentImg: {
-    paddingRight: 10,
+    paddingRight: 20,
   },
   appbarLine: {
     height: 10,
