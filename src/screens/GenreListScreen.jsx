@@ -1,8 +1,8 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
-import AppBar from '../components/AppBar';
-import Genre from '../components/Genre';
+import AppBar from '../components/AppBarComponent';
+import Genre from '../components/GenreComponent';
 
 export default function GenreListScreen() {
   const genreContent = [

@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { Ionicons, MaterialIcons } from '@expo/vector-icons'; 
 
-import CustomIcon from './CustomIcon';
+import CustomIcon from './CustomIconComponent';
 
 export default function AppBar() {
   return (

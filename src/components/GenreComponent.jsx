@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, Alert } from 'react-native';
-import CustomIcon from './CustomIcon';
+import CustomIcon from './CustomIconComponent';
 
 export default function Genre(props) {
   const { name, text, color } = props;
