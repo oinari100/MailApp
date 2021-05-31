@@ -1,4 +1,4 @@
-const SchoolContainer = [
+const SchoolContainer = {
   rest:{
     title:"学校を休む",
     list:{
@@ -33,5 +33,5 @@ const SchoolContainer = [
       5:"部活に私用で遅刻する"
     }
   }
-];
+};
 export default SchoolContainer;
