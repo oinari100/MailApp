@@ -3,7 +3,7 @@ import { StyleSheet, Text, View } from 'react-native';
 
 import AppBar from '../components/AppBarComponent';
 
-export default function GenreDetailListScreen() {
+export default function TermsOfUseScreen() {
 
   return (
     <View>
