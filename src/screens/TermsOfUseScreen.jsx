@@ -8,7 +8,7 @@ export default function TermsOfUseScreen() {
   return (
     <View>
       <AppBar />
-      <Text><Text>
+      <Text>—˜—p‹K–ñ<Text>
       <View>
         
         
