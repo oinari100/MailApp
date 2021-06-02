@@ -1,7 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
-import AppBar from '../components/AppBarComponent';
 import Genre from '../components/GenreComponent';
 
 export default function GenreListScreen() {
@@ -15,9 +14,20 @@ export default function GenreListScreen() {
   ]
 
   return (
-    <View>
-      <AppBar />
+    <View style={styles.container}>
       { React.Children.toArray(genreContent.map((v) => <Genre name={v.name} text={v.text} color={v.color}/>))}
+      <View style={styles.background} />
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#ffffff',
+  },
+  background: {
+    height: '100%',
+    backgroundColor: 'rgba(215,219,255,0.25)',
+  },
+});
