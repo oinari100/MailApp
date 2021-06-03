@@ -2,6 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
 import Genre from '../components/GenreComponent';
+import Search from '../components/SearchComponent';
 
 export default function GenreListScreen() {
   const genreContent = [
@@ -15,7 +16,10 @@ export default function GenreListScreen() {
 
   return (
     <View style={styles.container}>
-      { React.Children.toArray(genreContent.map((v) => <Genre name={v.name} text={v.text} color={v.color}/>))}
+      <View style={styles.line} />
+      <View style={styles.search}>
+        <Search />
+      </View>
       <View style={styles.background} />
     </View>
   );
@@ -26,8 +30,15 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#ffffff',
   },
+  line: {
+    height: 10,
+    backgroundColor: '#6A94FF'
+  },
+  search: {
+    marginTop: 10
+  },
   background: {
     height: '100%',
-    backgroundColor: 'rgba(215,219,255,0.25)',
+    backgroundColor: '#ffffff'
   },
 });
