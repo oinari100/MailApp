@@ -1,4 +1,5 @@
 import React from 'react';
+import { View, Text, StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
@@ -7,13 +8,13 @@ import GenreDetailListScreen from '../screens/GenreDetailListScreen';
 
 const Stack = createStackNavigator();
 
-export default function App() {
+export default function NavigationComponent() {
   return (
     <NavigationContainer>
       <Stack.Navigator
         initialRouteName="GenreListScreen"
         screenOptions={{
-          headerStyle: { height: 120, backgroundColor: '#2B4CBF' },
+          headerStyle: styles.appbar,
           headerTitle: '',
           headerTintColor: '#ffffff',
           headerBackTitle: '戻る',
@@ -25,3 +26,9 @@ export default function App() {
     </NavigationContainer>
   );
 }
+
+const styles = StyleSheet.create({
+  appbar: {
+    backgroundColor: '#2B4CBF',
+  }
+});
