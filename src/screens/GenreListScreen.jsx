@@ -20,6 +20,7 @@ export default function GenreListScreen() {
       <View style={styles.search}>
         <Search />
       </View>
+      <Genre />
       <View style={styles.background} />
     </View>
   );
@@ -35,7 +36,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#6A94FF'
   },
   search: {
-    marginTop: 10
+    padding: 10,
+    backgroundColor: '#F5F6FF'
   },
   background: {
     height: '100%',
