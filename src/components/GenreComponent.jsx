@@ -1,11 +1,17 @@
 import React from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, Alert } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+
 import CustomIcon from './CustomIconComponent';
 
 export default function Genre(props) {
   const { name, text, color } = props;
+  const navigation = useNavigation();
   return (
-    <TouchableOpacity style={styles.genre} onPress={() => {Alert.alert("クリック")}}>
+    <TouchableOpacity 
+      style={styles.genre}
+      onPress={() => { navigation.navigate('GenreDetailListScreen')}}
+    >
       <View style={styles.genreContent}>
         <CustomIcon name={name} size={46} color={color} />
         <Text style={styles.genreText}>{text}</Text>
@@ -20,7 +26,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#ffffff',
     height: 80,
     borderWidth: 1,
-    borderColor: '#BEBEBE',
+    borderColor: '#DEDEDE',
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',

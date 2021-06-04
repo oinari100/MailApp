@@ -1,8 +1,8 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
-import AppBar from '../components/AppBarComponent';
 import Genre from '../components/GenreComponent';
+import Search from '../components/SearchComponent';
 
 export default function GenreListScreen() {
   const genreContent = [
@@ -15,9 +15,30 @@ export default function GenreListScreen() {
   ]
 
   return (
-    <View>
-      <AppBar />
-      { React.Children.toArray(genreContent.map((v) => <Genre name={v.name} text={v.text} color={v.color}/>))}
+    <View style={styles.container}>
+      <View style={styles.line} />
+      <View style={styles.search}>
+        <Search />
+      </View>
+      <View style={styles.background} />
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#ffffff',
+  },
+  line: {
+    height: 10,
+    backgroundColor: '#6A94FF'
+  },
+  search: {
+    marginTop: 10
+  },
+  background: {
+    height: '100%',
+    backgroundColor: '#ffffff'
+  },
+});
