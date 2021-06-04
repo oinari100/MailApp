@@ -1,45 +1,87 @@
 import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import { ListItem } from 'react-native-elements'
 
 import CustomIcon from './CustomIconComponent';
 
 export default function Genre(props) {
   const { name, text, color } = props;
   const navigation = useNavigation();
+  const list = [
+    {
+      title: '学 校',
+      subtitle: '休みや遅刻、部活動など',
+      icon: 'school',
+      color: '#64DFDF'
+    },
+    {
+      title: 'インターン',
+      subtitle: 'OB / OG訪問、日程調整など',
+      icon: 'intern',
+      color: '#56CFE1'
+    },
+    {
+      title: '就職 / 転職',
+      subtitle: '面接、企業への質問など',
+      icon: 'bill',
+      color: '#48BFE3'
+    },
+    {
+      title: '会社 / ビジネス',
+      subtitle: '休みや遅刻、アポイントなど',
+      icon: 'business',
+      color: '#4EA8DE'
+    },
+    {
+      title: 'その他',
+      subtitle: '冠婚葬祭やお祝い事など',
+      icon: 'other',
+      color: '#61A0FF'
+    },
+    {
+      title: 'オリジナル',
+      subtitle: 'ご自身の定型文を新規作成',
+      icon: 'original',
+      color: '#AFAEB0'
+    },
+  ];
+
+
   return (
-    <TouchableOpacity 
-      style={styles.genre}
-      onPress={() => { navigation.navigate('GenreDetailListScreen')}}
+    <TouchableOpacity
+    style={styles.list}
     >
-      <View style={styles.genreContent}>
-        <CustomIcon name={name} size={46} color={color} />
-        <Text style={styles.genreText}>{text}</Text>
-      </View>
-      <CustomIcon name="arrow" size={24} color={color} />
+      {list.map((item, i) => (
+        <ListItem key={i}
+          style={styles.listItem}
+          onPress={() => { navigation.navigate('GenreDetailListScreen')}}
+        >
+          <CustomIcon name={item.icon} size={40} color={item.color} />
+          <ListItem.Content>
+            <ListItem.Title style={styles.listTitle}>{item.title}</ListItem.Title>
+            <ListItem.Subtitle style={styles.listSubTitle}>{item.subtitle}</ListItem.Subtitle>
+          </ListItem.Content>
+          <ListItem.Chevron />
+        </ListItem>
+      ))}
     </TouchableOpacity>
   );
 }
 
 const styles = StyleSheet.create({
-  genre: {
-    backgroundColor: '#ffffff',
-    height: 80,
-    borderWidth: 1,
-    borderColor: '#DEDEDE',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    paddingRight: 16,
-    paddingLeft: 16,
+  list: {
+    marginTop: 10
   },
-  genreContent: {
-    flexDirection: 'row',
-    alignItems: 'center'
+  listItem: {
+    marginTop: 12
   },
-  genreText: {
-    fontSize: 20,
-    color: '#2B4CBF',
-    paddingLeft: 20,
+  listTitle: {
+    fontSize: 18
+  },
+  listSubTitle: {
+    fontSize: 14,
+    color: '#9D9D9D',
+    marginTop: 4
   }
 })

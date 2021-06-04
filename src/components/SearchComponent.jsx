@@ -12,21 +12,20 @@ export default function SearchComponent() {
         inputContainerStyle={styles.inputContainer}
         value={searchValue}
         onChangeText={(text) => { setSearchValue(text) }}
-        placeholder="検 索"
+        placeholder="検索"
         round="true"
         lightTheme="true"
         platform="ios"
         cancelButtonTitle=""
-        autoCapitalize="none"
       />
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    backgroundColor: '#ffffff'
+  inputSearch: {
+    backgroundColor: '#F5F6FF'
   },
   inputContainer: {
-    backgroundColor: '#F1F1F1'
+    backgroundColor: '#ffffff'
   }
 });
