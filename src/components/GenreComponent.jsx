@@ -5,7 +5,7 @@ import { ListItem } from 'react-native-elements'
 
 import CustomIcon from './CustomIconComponent';
 
-export default function Genre(props) {
+export default function GenreComponent(props) {
   const { name, text, color } = props;
   const navigation = useNavigation();
   const list = [
@@ -47,15 +47,14 @@ export default function Genre(props) {
     },
   ];
 
-
   return (
     <TouchableOpacity
-    style={styles.list}
+      style={styles.list}
     >
       {list.map((item, i) => (
         <ListItem key={i}
           style={styles.listItem}
-          onPress={() => { navigation.navigate('GenreDetailListScreen')}}
+          onPress={() => { navigation.navigate('GenreDetailList')}}
         >
           <CustomIcon name={item.icon} size={40} color={item.color} />
           <ListItem.Content>
