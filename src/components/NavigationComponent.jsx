@@ -3,8 +3,9 @@ import { View, Text, StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
-import GenreListScreen from '../screens/GenreListScreen';
-import GenreDetailListScreen from '../screens/GenreDetailListScreen';
+import GenreListfrom from '../screens/GenreListScreen';
+import GenreDetailList from '../screens/GenreDetailListScreen';
+import MailCreate from '../screens/MailCreateScreen';
 
 const Stack = createStackNavigator();
 
@@ -20,8 +21,9 @@ export default function NavigationComponent() {
           headerBackTitle: '戻る',
         }}
       >
-        <Stack.Screen name="GenreList" component={GenreListScreen} />
-        <Stack.Screen name="GenreDetailListScreen" component={GenreDetailListScreen} />
+        <Stack.Screen name="GenreList" component={GenreListfrom} />
+        <Stack.Screen name="GenreDetailList" component={GenreDetailList} />
+        <Stack.Screen name="MailCreate" component={MailCreate} />
       </Stack.Navigator>
     </NavigationContainer>
   );
