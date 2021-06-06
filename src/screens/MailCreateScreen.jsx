@@ -1,14 +1,23 @@
 import React from 'react';
-import { StyleSheet, Text, View, ScrollView } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 
 import Mail from '../components/MailComponent';
+import Button from '../components/ButtonComponent';
 
 export default function MailScreen() {
   return (
-    <ScrollView style={styles.container}>
+    <>
       <View style={styles.line} />
-      <Mail />
-    </ScrollView>
+      <View style={styles.container}> 
+        <Mail />
+      </View>
+      <View style={styles.buttonCopy}>
+        <Button name='clip' text='コピー' color='#4CB8F5'/>
+      </View>
+      <View style={styles.buttonMail}>
+        <Button name='mail' text='メール' color='#64DFDF'/>
+      </View>
+    </>
   );
 }
 
@@ -21,4 +30,14 @@ const styles = StyleSheet.create({
     height: 10,
     backgroundColor: '#6A94FF'
   },
+  buttonCopy: {
+    position: 'absolute',
+    right: 128,
+    bottom: 40
+  },
+  buttonMail: {
+    position: 'absolute',
+    right: 40,
+    bottom: 40
+  }
 });
