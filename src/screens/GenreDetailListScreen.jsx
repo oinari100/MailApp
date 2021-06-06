@@ -7,14 +7,17 @@ import GenreDetail from '../components/GenreDetailComponent';
 
 export default function GenreDetailListScreen(props) {
   return (
-    <ScrollView style={styles.container}>
-      <View style={styles.list}>
-        <GenreDetail />
-      </View>
-      <View style={styles.list}>
-        <GenreDetail />
-      </View>
-    </ScrollView>
+    <>
+      <View style={styles.line} />
+      <ScrollView style={styles.container}>
+        <View style={styles.list}>
+          <GenreDetail />
+        </View>
+        <View style={styles.list}>
+          <GenreDetail />
+        </View>
+      </ScrollView>
+    </>
   );
 }
 
@@ -25,5 +28,9 @@ const styles = StyleSheet.create({
   },
   list: {
     marginBottom: 56
-  }
+  },
+  line: {
+    height: 10,
+    backgroundColor: '#6A94FF'
+  },
 })
