@@ -1,10 +1,16 @@
 import React from 'react';
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, Alert } from 'react-native';
 
 import CustomIcon from './CustomIconComponent';
 
 export default function ButtonComponent(props) {
   const { name, text, color } = props;
+
+  const isPropsName = () => {
+    if (name === 'clip') {
+      Alert.alert('コピーしました。');
+    }
+  }
 
   return (
     <TouchableOpacity　style={{
@@ -18,7 +24,9 @@ export default function ButtonComponent(props) {
       shadowRadius: 8,
       justifyContent: 'center',
       alignItems: 'center',
-    }}>
+    }}
+    onPress={isPropsName}
+    >
       <View style={{
         marginTop: 6,
         justifyContent: 'center',
