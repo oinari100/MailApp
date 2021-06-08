@@ -8,7 +8,7 @@ import GenreDetailList from '../screens/GenreDetailListScreen';
 import MailCreate from '../screens/MailCreateScreen';
 import Contact from '../screens/ContactScreen';
 import TermsOfUse from '../screens/TermsOfUseScreen';
-import FirstLogin from '../screens/FirstLoginScreeen';
+import Wellcome from '../screens/WellcomeScreeen';
 
 const Stack = createStackNavigator();
 
@@ -16,7 +16,7 @@ export default function NavigationComponent() {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName="FirstLogin"
+        initialRouteName="Wellcome"
         screenOptions={{
           headerStyle: styles.appbar,
           headerTitle: '',
@@ -24,7 +24,7 @@ export default function NavigationComponent() {
           headerBackTitle: '戻る',
         }}
       >
-        <Stack.Screen name="FirstLogin" component={FirstLogin} options={{headerShown: false}}/>
+        <Stack.Screen name="Wellcome" component={Wellcome} options={{headerShown: false}}/>
         <Stack.Screen name="GenreList" component={GenreListfrom} />
         <Stack.Screen name="GenreDetailList" component={GenreDetailList} />
         <Stack.Screen name="MailCreate" component={MailCreate} />
