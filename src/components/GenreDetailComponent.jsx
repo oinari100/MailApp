@@ -3,19 +3,9 @@ import { StyleSheet, Text, View, } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { ListItem } from 'react-native-elements'
 
-import SchoolContainer from '../containers/SchoolContainer';
-
 export default function GenreDetailComponent(props) {
-  const { name, text, color } = props;
+  const { genre } = props;
   const navigation = useNavigation();
-  const list = {
-    title:"学校を休む",
-    content:[
-      "学校を体調不良で休む",
-      "学校を私用で休む",
-      "学校を忌引きで休む"
-    ]
-  };
 
   return (
     <View style={styles.container}>
@@ -23,11 +13,11 @@ export default function GenreDetailComponent(props) {
         <Text
           style={styles.title}
         >
-          {list.title}
+          {genre.title}
         </Text>
       </View>
       <View style={styles.list}>
-        {list.content.map((item, i) => (
+        {genre.list.map((item, i) => (
           <ListItem 
             key={i}
             onPress={() => { navigation.navigate('MailCreate')}}

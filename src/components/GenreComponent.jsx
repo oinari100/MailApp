@@ -54,7 +54,7 @@ export default function GenreComponent(props) {
       {list.map((item, i) => (
         <ListItem key={i}
           style={styles.listItem}
-          onPress={() => { navigation.navigate('GenreDetailList')}}
+          onPress={() => { navigation.navigate('GenreDetailList',{ genre: item.icon})}}
         >
           <CustomIcon name={item.icon} size={40} color={item.color} />
           <ListItem.Content>
@@ -64,6 +64,7 @@ export default function GenreComponent(props) {
           <ListItem.Chevron />
         </ListItem>
       ))}
+    <Text onPress={() => { navigation.navigate('Member')}}>test</Text>
     </TouchableOpacity>
   );
 }

@@ -3,6 +3,7 @@ import { StyleSheet, Text, View } from 'react-native';
 
 import Genre from '../components/GenreComponent';
 import Search from '../components/SearchComponent';
+import Modal from '../components/ModalComponent';
 
 export default function GenreListScreen() {
   const genreContent = [
@@ -21,7 +22,7 @@ export default function GenreListScreen() {
         <Search />
       </View>
       <Genre />
-      <View style={styles.background} />
+      <Modal />
     </View>
   );
 }
@@ -38,9 +39,5 @@ const styles = StyleSheet.create({
   search: {
     padding: 10,
     backgroundColor: '#F5F6FF'
-  },
-  background: {
-    height: '100%',
-    backgroundColor: '#ffffff'
-  },
+  }
 });

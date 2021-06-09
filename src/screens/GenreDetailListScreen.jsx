@@ -4,18 +4,19 @@ import { useNavigation } from '@react-navigation/native';
 import { ListItem } from 'react-native-elements'
 
 import GenreDetail from '../components/GenreDetailComponent';
+import SchoolContainer from '../containers/SchoolContainer';
 
-export default function GenreDetailListScreen(props) {
+export default function GenreDetailListScreen({ navigation, route }) {
+
   return (
     <>
       <View style={styles.line} />
       <ScrollView style={styles.container}>
-        <View style={styles.list}>
-          <GenreDetail />
-        </View>
-        <View style={styles.list}>
-          <GenreDetail />
-        </View>
+        {SchoolContainer.map((item, i) => (
+          <View style={styles.list}>
+            <GenreDetail genre={item}/>
+          </View>
+          ))}
       </ScrollView>
     </>
   );
