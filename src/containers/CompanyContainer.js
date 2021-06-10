@@ -19,7 +19,7 @@ const BusinessContainer = [
     title:"会社その他",
     list:[
       "会社を休職する",
-      "会社を辞める",
+      "会社を辞める"
     ]
   }
 ];
