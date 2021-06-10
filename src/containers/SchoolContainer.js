@@ -16,7 +16,7 @@ const SchoolContainer = [
     ]
   },
   {
-    title:"学校を休学する・退学する",
+    title:"学校その他",
     list:[
       "学校を休学する",
       "学校を退学する",

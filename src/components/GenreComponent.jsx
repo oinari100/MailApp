@@ -28,15 +28,15 @@ export default function GenreComponent(props) {
       color: '#48BFE3'
     },
     {
-      title: '会社 / ビジネス',
-      subtitle: '休みや遅刻、アポイントなど',
+      title: '会社',
+      subtitle: '休みや遅刻、退職など',
       icon: 'business',
       color: '#4EA8DE'
     },
     {
-      title: 'その他',
-      subtitle: '冠婚葬祭やお祝い事など',
-      icon: 'other',
+      title: 'ビジネス',
+      subtitle: 'アポイント、業務調整など',
+      icon: 'company',
       color: '#61A0FF'
     },
     {
@@ -64,7 +64,6 @@ export default function GenreComponent(props) {
           <ListItem.Chevron />
         </ListItem>
       ))}
-    <Text onPress={() => { navigation.navigate('Member')}}>test</Text>
     </TouchableOpacity>
   );
 }
