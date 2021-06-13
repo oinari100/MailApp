@@ -20,7 +20,7 @@ export default function GenreDetailComponent(props) {
         {genre.list.map((item, i) => (
           <ListItem 
             key={i}
-            onPress={() => { navigation.navigate('MailCreate')}}
+            onPress={() => { navigation.navigate('MailCreate', { genreDetail: item})}}
             style={styles.listItem}
             bottomDivider
           >
