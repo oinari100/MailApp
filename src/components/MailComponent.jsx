@@ -3,12 +3,12 @@ import { ScrollView, StyleSheet, Text, View, TextInput, Dimensions } from 'react
 import { Divider } from 'react-native-elements';
 
 export default function GenreDetailComponent(props) {
-  const { name, text, color } = props;
+  const { mailTitle, mailContent } = props;
 
   return (
     <View style={styles.container}>
       <View style={styles.genre}>
-        <Text style={styles.genreText}>学校を体調不良で休む</Text>
+        <Text style={styles.genreText}>{mailTitle}</Text>
       </View>
       <View>
         <View style={styles.subject}>
@@ -17,7 +17,7 @@ export default function GenreDetailComponent(props) {
         </View>
         <Divider style={styles.divider}/>
         <ScrollView style={styles.letterBody}>
-          <TextInput></TextInput>
+          <TextInput multiline={true}>{mailContent}</TextInput>
         </ScrollView>
       </View>
     </View>

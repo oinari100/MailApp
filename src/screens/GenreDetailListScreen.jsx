@@ -1,7 +1,5 @@
 import React from 'react';
 import { ScrollView, StyleSheet, Text, View, TouchableOpacity } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
-import { ListItem } from 'react-native-elements'
 
 import GenreDetail from '../components/GenreDetailComponent';
 import SchoolContainer from '../containers/SchoolContainer';
@@ -10,7 +8,7 @@ import JobHuntingContainer from '../containers/JobHuntingContainer';
 import CompanyContainer from '../containers/CompanyContainer';
 import BusinessContainer from '../containers/BusinessContainer';
 
-export default function GenreDetailListScreen({ navigation, route }) {
+export default function GenreDetailListScreen({ route }) {
 
   const genre = route.params.genre
   
