@@ -10,15 +10,27 @@ export default function MailScreen({ route }) {
 
   const genreDetail = route.params.genreDetail
 
-  const isMailContent = () => {
-  
-  }
+  const isSubject = SchoolDetailContainer.map(function(item){
+    if (item['title'] === genreDetail){
+      return item['subject'];
+    }
+  });
+
+  const isMailContent = SchoolDetailContainer.map(function(item){
+    if (item['title'] === genreDetail){
+      return item['mailContent'];
+    }
+  });
 
   return (
     <>
       <View style={styles.line} />
       <View style={styles.container}> 
-        <Mail mailTitle={genreDetail} mailContent={SchoolDetailContainer}/>
+        <Mail 
+          mailTitle={genreDetail} 
+          subject={isSubject} 
+          mailContent={isMailContent}
+        />
       </View>
       <View style={styles.buttonCopy}>
         <Button name='clip' text='コピー' color='#4CB8F5'/>

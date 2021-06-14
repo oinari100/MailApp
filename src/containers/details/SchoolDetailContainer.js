@@ -158,5 +158,6 @@ mailContent:`●●先生
 △△△△　○○
 `
 }
+]
 
 export default SchoolDetailContainer;

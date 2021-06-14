@@ -3,7 +3,7 @@ import { ScrollView, StyleSheet, Text, View, TextInput, Dimensions } from 'react
 import { Divider } from 'react-native-elements';
 
 export default function GenreDetailComponent(props) {
-  const { mailTitle, mailContent } = props;
+  const { mailTitle, subject, mailContent } = props;
 
   return (
     <View style={styles.container}>
@@ -13,12 +13,10 @@ export default function GenreDetailComponent(props) {
       <View>
         <View style={styles.subject}>
           <Text style={styles.subjectLabel}>件名：</Text>
-          <TextInput style={styles.subjectText}></TextInput>
+          <TextInput style={styles.subjectText}>{subject}</TextInput>
         </View>
         <Divider style={styles.divider}/>
-        <ScrollView style={styles.letterBody}>
-          <TextInput multiline={true}>{mailContent}</TextInput>
-        </ScrollView>
+        <TextInput style={styles.letterBody} multiline={true} selectionColor='#E7EBFF'>{mailContent}</TextInput>
       </View>
     </View>
   );
@@ -52,17 +50,18 @@ const styles = StyleSheet.create({
   subjectLabel: {
     color: '#979797',
     padding: 10,
-    fontSize: 16
+    fontSize: 18
   },
   subjectText: {
     fontSize: 16
   },
   divider: {
     marginRight: 12,
-    marginLeft: 12
+    marginLeft: 12,
+    marginBottom: 16
   },
   letterBody: {
-    padding: 20,
-    fontSize: 16
+    padding: 24,
+    fontSize: 16,
   }
 })
