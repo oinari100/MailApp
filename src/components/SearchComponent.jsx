@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, TextInput } from 'react-native';
+import { StyleSheet } from 'react-native';
 
 //import CustomIcon from './CustomIconComponent';
 import { SearchBar } from 'react-native-elements';
