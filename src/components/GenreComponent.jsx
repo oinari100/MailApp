@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, TouchableOpacity } from 'react-native';
+import { StyleSheet, TouchableOpacity, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { ListItem } from 'react-native-elements'
 
@@ -48,22 +48,22 @@ export default function GenreComponent(props) {
   ];
 
   return (
-    <TouchableOpacity
-      style={styles.list}
-    >
-      {list.map((item, i) => (
-        <ListItem key={i}
-          style={styles.listItem}
-          onPress={() => { navigation.navigate('GenreDetailList',{ genre: item.icon})}}
-        >
-          <CustomIcon name={item.icon} size={40} color={item.color} />
-          <ListItem.Content>
-            <ListItem.Title style={styles.listTitle}>{item.title}</ListItem.Title>
-            <ListItem.Subtitle style={styles.listSubTitle}>{item.subtitle}</ListItem.Subtitle>
-          </ListItem.Content>
-          <ListItem.Chevron />
-        </ListItem>
-      ))}
+    <TouchableOpacity>
+      <View style={styles.list}>
+        {list.map((item, i) => (
+          <ListItem key={i}
+            style={styles.listItem}
+            onPress={() => { navigation.navigate('GenreDetailList',{ genre: item.icon})}}
+          >
+            <CustomIcon name={item.icon} size={40} color={item.color} />
+            <ListItem.Content>
+              <ListItem.Title style={styles.listTitle}>{item.title}</ListItem.Title>
+              <ListItem.Subtitle style={styles.listSubTitle}>{item.subtitle}</ListItem.Subtitle>
+            </ListItem.Content>
+            <ListItem.Chevron />
+          </ListItem>
+        ))}
+      </View>
     </TouchableOpacity>
   );
 }
