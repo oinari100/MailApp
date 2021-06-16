@@ -1,5 +1,5 @@
 import React from 'react';
-import { ScrollView, StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import { ScrollView, StyleSheet, View } from 'react-native';
 
 import GenreDetail from '../components/GenreDetailComponent';
 import SchoolContainer from '../containers/SchoolContainer';
