@@ -1,5 +1,5 @@
 import React from 'react';
-import { ScrollView, StyleSheet, Text, View, TextInput, Dimensions } from 'react-native';
+import { StyleSheet, Text, View, TextInput } from 'react-native';
 import { Divider } from 'react-native-elements';
 
 export default function GenreDetailComponent(props) {

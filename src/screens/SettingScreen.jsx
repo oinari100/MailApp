@@ -7,11 +7,7 @@ export default function SettingScreen() {
 
   return (
     <View>
-      <AppBar />
-      <Text><Text>
-      <View>
-        
-        
-      </View>
+
+    </View>
   );
 }

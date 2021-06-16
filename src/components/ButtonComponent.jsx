@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, Alert } from 'react-native';
+import { Text, View, TouchableOpacity, Alert } from 'react-native';
 
 import CustomIcon from './CustomIconComponent';
 
