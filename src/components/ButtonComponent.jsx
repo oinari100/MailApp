@@ -1,5 +1,6 @@
 import React from 'react';
 import { Text, View, TouchableOpacity, Alert } from 'react-native';
+import Clipboard from 'expo-clipboard'
 
 import CustomIcon from './CustomIconComponent';
 
@@ -8,6 +9,7 @@ export default function ButtonComponent(props) {
 
   const isPropsName = () => {
     if (name === 'clip') {
+      Clipboard.setString('コピーテキスト');
       Alert.alert('コピーしました。');
     }
   }
