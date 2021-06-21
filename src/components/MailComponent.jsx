@@ -13,6 +13,13 @@ export default function GenreDetailComponent(props) {
     defaultExpires: 1000 * 3600 * 2,
     enableCache: true,
   })
+  
+  const handleChange = () => {
+    storage.save({
+      key: 'copyText',
+      data: mailContent,
+    })
+  }
 
   return (
     <View style={styles.container}>
@@ -25,7 +32,14 @@ export default function GenreDetailComponent(props) {
           <TextInput style={styles.subjectText}>{subject}</TextInput>
         </View>
         <Divider style={styles.divider}/>
-        <TextInput style={styles.letterBody} multiline={true} selectionColor='#E7EBFF'>{mailContent}</TextInput>
+        <TextInput
+          style={styles.letterBody}
+          multiline={true}
+          selectionColor='#E7EBFF'
+          onChangeText={handleChange}
+        >
+          {mailContent}
+        </TextInput>
       </View>
     </View>
   );
