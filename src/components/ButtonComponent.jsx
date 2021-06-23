@@ -5,12 +5,18 @@ import Clipboard from 'expo-clipboard'
 import CustomIcon from './CustomIconComponent';
 
 export default function ButtonComponent(props) {
-  const { name, text, color } = props;
+  const { name, text, color, storage } = props;
 
   const isPropsName = () => {
     if (name === 'clip') {
-      Clipboard.setString('コピーテキスト');
-      Alert.alert('コピーしました。');
+      storage.load({
+        key : 'copyText'
+      }).then(data => {
+        Clipboard.setString(data);
+        Alert.alert('コピーしました。');
+      }).catch(err => {
+        Alert.alert('コピーに失敗しました。');
+      });
     }
   }
 
