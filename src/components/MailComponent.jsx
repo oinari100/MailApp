@@ -1,19 +1,10 @@
 import React from 'react';
 import { StyleSheet, Text, View, TextInput } from 'react-native';
 import { Divider } from 'react-native-elements';
-import Storage from 'react-native-storage';
-import AsyncStorage from '@react-native-community/async-storage';
 
 export default function GenreDetailComponent(props) {
-  const { mailTitle, subject, mailContent } = props;
+  const { mailTitle, subject, mailContent, storage } = props;
 
-  const storage = new Storage({
-    size: 1000,
-    storageBackend: AsyncStorage,
-    defaultExpires: 1000 * 3600 * 2,
-    enableCache: true,
-  })
-  
   const handleChange = () => {
     storage.save({
       key: 'copyText',
