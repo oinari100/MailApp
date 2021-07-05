@@ -1,8 +1,9 @@
-import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import React, { useState } from 'react';
+import { StyleSheet, View, Text } from 'react-native';
+
+import { SearchBar } from 'react-native-elements';
 
 import Genre from '../components/GenreComponent';
-import Search from '../components/SearchComponent';
 import Modal from '../components/ModalComponent';
 
 export default function GenreListScreen() {
@@ -15,13 +16,30 @@ export default function GenreListScreen() {
     {name: "file", text: "その他", color:"#2B4CBF"},
   ]
 
+  const [ searchValue, setSearchValue ] = useState('');
+
   return (
     <View style={styles.container}>
       <View style={styles.line} />
       <View style={styles.search}>
-        <Search />
+        <SearchBar
+          containerStyle={styles.inputSearch}
+          inputContainerStyle={styles.inputContainer}
+          value={searchValue}
+          onChangeText={(text) => { setSearchValue(text) }}
+          placeholder="検索"
+          round="true"
+          lightTheme="true"
+          platform="ios"
+          cancelButtonTitle=""
+        />
       </View>
-      <Genre />
+      <View style={{ display: searchValue.length == 0 ? '' : 'none' }}>
+        <Genre />
+      </View>
+      <View style={{ display: searchValue.length == 0 ? 'none' : '' }}>
+        <Text>検索結果</Text>
+      </View>
       <Modal />
     </View>
   );
@@ -39,5 +57,11 @@ const styles = StyleSheet.create({
   search: {
     padding: 10,
     backgroundColor: '#F5F6FF'
+  },
+  inputSearch: {
+    backgroundColor: '#F5F6FF'
+  },
+  inputContainer: {
+    backgroundColor: '#ffffff'
   }
 });
